@@ -4,6 +4,8 @@ import { UserModule } from './user/user.module';
 import { BookmarkModule } from './bookmark/bookmark.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
+import { OnlineGameGateway } from './online-game/online-game.gateway';
+import { WebsocketModule } from './online-game/websocket.module';
 
 
 
@@ -12,10 +14,12 @@ import { ConfigModule } from '@nestjs/config';
     AuthModule, 
     UserModule,
     BookmarkModule,
+    WebsocketModule,
     PrismaModule,
     ConfigModule.forRoot({
       isGlobal: true
     }),
   ],
+  providers: [OnlineGameGateway],
 })
 export class AppModule {}
