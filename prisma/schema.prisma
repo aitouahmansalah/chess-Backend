@@ -43,3 +43,4 @@ model Bookmark{
 
   @@map("bookmarks")
 }
+
